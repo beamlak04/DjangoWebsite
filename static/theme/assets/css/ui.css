@@ -1,0 +1,140 @@
+a{
+    text-decoration: none;
+}
+:root{
+    --primary: #1266f1 ;
+    --secondary: #b23cfd;
+    --success:#71DD37;
+    --danger:#FF3E1D;
+    --info: #03C3EC;
+    --warning: #FFAB00;
+    --dark: #233446;
+    --light: #E9E9FD;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+.btn:active{
+    transform: scale(0.9);
+}
+
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #Fff;
+}
+.btn-secondary{
+    background-color: var(--secondary);
+    color: #Fff;
+    border-color: var(--secondary);
+}
+.btn-success{
+    background-color: var(--success);
+    border-color: var(--success);
+    color: #Fff;
+}
+.btn-danger{
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: #Fff;
+}
+.btn-info{
+    background-color: var(--info);
+    border-color: var(--info);
+    color: #Fff;
+}
+.btn-warning{
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: #Fff;
+}
+.btn-dark{
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: #Fff;
+}
+.btn-light{
+    background-color: var(--light);
+    border-color: var(--light);
+    color: #111;
+}
+
+.btn-outline-primary{
+    color: var(--primary);
+}
+.btn-outline-secondary{
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn-outline-success{
+    color: var(--success);
+}
+.btn-outline-danger{
+    color: var(--danger);
+}
+.btn-outline-info{
+    color: var(--info);
+}
+.btn-outline-warning{
+    color: var(--warning);
+}
+.btn-outline-dark{
+    color: var(--dark);
+}
+.btn--outline-light{
+    color: var(--dark);
+}
+
+.btn-outline-primary:hover{
+    color: #Fff;
+    background-color: var(--primary);
+}
+.btn-outline-secondary:hover{
+    color:#fff;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn-outline-success:hover{
+    color: #Fff;
+    background-color: var(--success);
+}
+.btn-outline-danger:hover{
+    color: #fff;
+    background-color: var(--danger);
+}
+.btn-outline-info:hover{
+    color: #Fff;
+    background-color: var(--info);
+}
+.btn-outline-warning:hover{
+    color: #fff;
+    background-color: var(--warning);
+}
+.btn-outline-dark:hover{
+    color: white;
+    background-color: var(--dark);
+}
+.btn--outline-light:hover{
+    color: var(--dark);
+    background-color: #fff;
+}
+
+
+#sideBarProfile span{
+    color: gray;
+}
+#sideBarProfile span:hover{
+    color: var(--info);
+}
+
+.wrapper{
+    background-color: #2D2D39;
+}
+.wrapper header{
+    background-color: #3F4156;
+}
+
+footer{
+    background-color: #3F4156;
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="" href="">
+
+    <!-- mdb -->
+    <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css'%}">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css'%}">
+    
+    <!-- custom bootstrap -->
+    <link rel="stylesheet" href="{% static 'custom-bootstrap/css/main.min.css'%}">
+    
+    <!-- core css  -->
+    <link rel="stylesheet" href="{% static 'core-styles/landing_pg/style.css'%}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static 'styles/main/style.css'%}">
+    
+    <!-- font awesome   -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css'%}">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="{% static 'icons/bootstrap-icons/font/bootstrap-icons.css'%}">
+
+    <script src="{% static 'mdb/js/mdb.min.js'%}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+</head>
+<body>
+  {% block everything %} 
+    {% block header %}
+    <!-- navbar and slider -->
+    <header>
+        {% block navbar %}
+        <!-- navbar ---------- -->
+        <nav class="navbar navbar-expand-lg  bg-light opacity-80">
+            <div class="container">
+                <!-- logo -- -->
+                <a class="navbar-brand fw-bold" href="{% url 'Home'%}">
+                    <img src="{% static 'images/bd.png'%}" alt="" height="50" width="100"> DON BOSCO
+                </a>
+                <!-- toggler button -->
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- nav menu -->
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto text-center">
+                        {% url 'Home' as l_home %}
+                        <li class="nav-item">
+                            <a href="{% url 'Home'%}" class="nav-link {% if l_home == request.path%} active-l {% endif %}">Home</a>
+                        </li>
+                        {% url 'aboutUs' as l_about %}
+                        <li class="nav-item">
+                            <a href="{% url 'aboutUs'%}" class="nav-link {% if l_about == request.path%} active-l {% endif %}">About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="news.html" class="nav-link">News</a>
+                        </li>
+                        {% url 'contactUs' as l_contact %}
+                        <li class="nav-item">
+                            <a href="{% url 'contactUs'%}" class="nav-link {% if l_contact == request.path%} active-l {% endif %}">Contact Us</a>
+                        </li>
+                        <!-- sign up btn -->
+                        <a href="{% url 'register_pg' %}" class="btn btn-outline-info rounded-pill">Sign Up</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% endblock navbar %}
+
+        {% block slider %}
+        <!-- slider -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- indicators -->
+            <div class="carousel-indicators">
+                <li type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></li>
+                <li  type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></li>
+                <li  type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></li>
+            </div>
+            <!-- slides -->
+            <div class="carousel-inner">
+                <!-- slide one  -->
+                <div class="carousel-item active bg-image" 
+                style="background-position:center;background-size:cover;">
+                    <img src="{% static 'images/slide2.jpg'%}" alt="" class="w-100 d-block">
+                    <div class="mask" style="background-color: rgba(0,0,0,0.6);"></div>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1 class="display-3 fw-bold">DON BOSCO CATHOLIC SCHOOL </h1>
+                            <p>Some representative placeolder content for the first slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-outline-info rounded-pill" href="#">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- slide two -->
+                <div class="carousel-item bg-image"
+                style="background-position:center;background-size: cover;">
+                    <img src="{% static 'images/slide3.jpeg'%}" alt="" class="w-100 d-block">
+                    <div class="mask" style="background-color:rgba(0,0,0,0.6) ;"></div>
+                    <div class="container">
+                        <div class="carousel-caption text-center">
+                            <h1 class="display-4 fw-normal">RUN, JUMP, have all the Fun you want at the Right Time, but do not Commit
+                                SIN!
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- slide three -->
+                <div class="carousel-item bg-image"
+                style="background-position:center;background-size: cover;">
+                    <img src="{% static 'images/images.png'%}" alt="" class="d-block w-100">
+                    <div class="mask" style="background-color:rgba(0,0,0,0.6) ;"></div>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>One more for good measure.</h1>
+                            <p>Some representative placeholder content for 
+                                the third slide of this carousel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- prev button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="fa-solid fa-angle-left" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <!-- next button -->
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="fa-solid fa-angle-right" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        {% endblock slider %}
+        
+    </header>
+    {% endblock header %}
+    
+    {% block content %}
+    
+    <!-- welcome section -->
+    <section id="l_welcome">
+        <div class="container " >
+            <div class="padding-y mb-10"></div>
+            <div class="row padding">
+                <div class="col-md-7">
+                    <h2 class="fw-normal text-center display-5 lh-1"data-mdb-toggle="animation" data-mdb-animation="slide-right" 
+                    data-mdb-animation-start="onScroll">Welcome to DON BOSCO 
+                        <span class="text-muted">Addis Ababa</span></h2>
+                        <div class="line bg-light w-75 mx-auto my-3"></div>
+                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+                        prose here.</p>
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
+                            dy=".3em">500x500</text>
+                    </svg>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section id="l_hFac">
+        <div class="container mx-auto">
+            <!-- title -->
+            <div class="col-12">
+                <h2 class="display-5 text-center">Facilities</h2>
+                <div class=" line bg-light w-75 mx-auto my-5"></div>
+            </div>
+
+            <div class="row text-center">
+                <!-- primary & Secondary School -->
+                <div class="col-lg-4 mb-5">
+                    <!-- img -->
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+                    <!-- title and text -->
+                    <div class="container my-5">
+                        <!-- title 1 -->
+                        <h2 class="fw-normal">Primary & Secondary School</h2>
+                        <!-- text -->
+                        <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+                        first column.</p>
+                        <p><a href="#" class="text-primary">read more</a></p>
+                    </div>
+                                        
+                </div>
+                <!-- technique School -->
+                <div class="col-lg-4 mb-5">
+                    <!-- img -->
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+                    <!-- title and text -->
+                    <div class="container my-5">
+                        <!-- title -->
+                        <h2 class="fw-normal">Technique School</h2>
+                        <!-- text -->
+                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                        column.</p>
+                        <p><a class="text-primary" href="#">read more</a></p>
+                    </div>
+                    
+                </div>
+                <!-- College -->
+                <div class="col-lg-4 mb-5">
+                    <!-- img -->
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+                    <!-- title and text -->
+                    <div class="container my-5">
+                        <h2 class="fw-normal">College</h2>
+                        <p>And lastly this, the third column of representative placeholder content.</p>
+                        <p><a class="text-primary" href="#">read more</a></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="l_whyUs">
+        <div class="container-fluid bg-image mb-10" style="background-image: url('assets/images/images2.png');
+                background-size: cover;background-position: center;">
+            <div class="mask" style="background-color: rgba(21, 84, 92, 0.7);"></div>
+            <div class="container py-5">
+                <div class="row text-white">
+                    <div class="col-md-5 bg-text h-100">
+                        <h1 class="text-center align-baseline">Why Us</h1>    
+                        <div class="line w-50 mx-auto bg-light"></div>
+                    </div>
+                    <div class="col-md-7 bg-text">
+                        <h2 class="fw-normal lh-1">Oh yeah, it’s that good.</h2>
+                        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
+                            this layout would work with some actual real-world content in place.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container " id="l_wwcf">
+        <div class="row padding">
+            <div class="col-md-7">
+                <h2 class="fw-normal lh-1">And lastly, this one. <span
+                        class="text-muted">Checkmate.</span></h2>
+                <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really
+                    intended to be actually read, simply here to give you a better view of what this would look like
+                    with some actual content. Your content.</p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
+                        dy=".3em">500x500</text>
+                </svg>
+
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container-fluid bg-primary text-white">
+            <div class="row mx-auto py-5">
+                <div class="col-6 col-md-3 mb-3 mb-md-0 text-center">
+                    <h2 class="display-3 fw-bolder">3000+</h2>
+                    <p class="fs-4">Students</p>
+                </div>
+                <div class="col-6 col-md-3 mb-3 mb-md-0 text-center">
+                    <h2 class="display-3 fw-bolder">100+</h2>
+                    <p class="fs-4">Teachers</p>
+                </div>
+                <div class="col-6 col-md-3 mb-3 mb-md-0 text-center">
+                    <h2 class="display-3 fw-bolder">3+</h2>
+                    <p class="fs-5">Educational Institutes</p>
+                </div>
+                <div class="col-6 col-md-3 mb-3 mb-md-0 text-center">
+                    <h2 class="display-3 fw-bolder">1</h2>
+                    <p class="fs-4">Church</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}
+            
+    <!-- footer -->
+    <footer class="container-fluid bg-light">
+        <div class="container pt-5">
+
+            <div class="row padding mb-0 mx-auto">
+                <!-- overview footer -->
+                <div class="col-md-4">
+                    <p>
+                    <h2 class="text-info">DON BOSCO</h2>
+                    </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex in rerum vero animi
+                        tempora velit necessitatibus temporibus quae assumenda eius unde eligendi,
+                        mollitia placeat non dolore obcaecati porro iure quasi! <br>
+                        <a href="#" class="text-info">read more</a>
+                    </p>
+                    <!-- social media -->
+                    <p class="justify-content-between d-flex text-info fs-5">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </p>
+
+                </div>
+                <!-- site map -->
+                <div class="col-md-4 text-center ">
+                    <p>
+                    <h5>Useful links</h5>
+                    </p>
+                    <hr class="w-50 mx-auto">
+                    <!-- home dropdown -->
+                    <p>
+                    <div class="dropdown ">
+                        <a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/#l_welcome" class="dropdown-item">Welcome</a></li>
+                            <li><a href="/#l_hFac" class="dropdown-item">Facilities</a></li>
+                            <li><a href="/#l_whyUs" class="dropdown-item">About Us</a></li>
+                            <li><a href="/#l_wwcf" class="dropdown-item">Smtn</a></li>
+                        </ul>
+                    </div>
+                    </p>
+                    <!-- about dropdown -->
+                    <p>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'aboutUs'%}#abtDB" class="dropdown-item">About Don Bosco</a></li>
+                            <li><a href="{% url 'aboutUs'%}#principles" class="dropdown-item">Our Principles</a></li>
+                            <li><a href="{% url 'aboutUs'%}#mission" class="dropdown-item">Mission</a></li>
+                            <li><a href="{% url 'aboutUs'%}#community" class="dropdown-item">Our Community</a></li>
+                        </ul>
+                    </div>
+                    </p>
+                    <p class=""><a href="#">News</a></p>
+                    <p><a href="#">Contact Us</a></p>
+                </div>
+                <!-- contact info -->
+                <div class="col-md-4">
+                    <p>
+                    <h4 class="text-center align-top">Contact Info</h4>
+                    </p>
+                    <hr class="w-50 mx-auto ">
+                    <p><i class="bi bi-geo-alt"></i></p>
+                    <p class="text-end">Mekanissa, Addis Ababa, Ethiopia <br> P.O.BOX: 4640</p>
+                    <p><i class="bi bi-telephone"></i></p>
+                    <p class="text-end">+251-113-210-831</p>
+                    <p class="text-end">+251-113-214-715</p>
+                    <p><i class="bi bi-envelope"></i></p>
+                    <p class="text-end">dbms@ethionet.et</p>
+
+                </div>
+                <!-- copyright -->
+                <div class="col-12">
+                    <p class="float-start">&copy; 2017–2022 Company, Inc. &middot;
+                        <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+                    </p>
+                    <p class="position-fixed bottom-0 end-0"><span class="text-end"><a class="btn btn-info rounded-circle"
+                                href="#">
+                                <i class="fa-solid fa-angle-up"></i></a></span></p>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    
+    {% endblock everything %} 
+</body>
+</html>

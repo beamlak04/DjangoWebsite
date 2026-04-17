@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+
+    <link rel="manifest" href="{% static 'theme/assets/favicon/manifest.json'%}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'theme/assets/favicon/ms-icon-144x144.png'%}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="{% static 'theme/assets/font-awesome/css/all.css'%}">
+    <link rel="stylesheet" href="{% static 'theme/assets/bootstrap-icons/font/bootstrap-icons.css'%}">   
+
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="{% static 'theme/vendors/simplebar/css/simplebar.css'%}">
+    <link rel="stylesheet" href="{% static 'theme/css/vendors/simplebar.css'%}">
+    <!-- Main styles for this application-->
+    <link href="{% static 'theme/css/style.css'%}" rel="stylesheet">
+    <!-- We use those styles to show code examples, you should remove them in your application.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+    <link href="{% static 'theme/css/examples.css'%}" rel="stylesheet">
+
+     <!-- bootstrap  -->
+     <link rel="stylesheet" href="{% static 'theme/assets/bootstrap/css/main.min.css'%}">
+
+    <!-- my css  -->
+    <link rel="stylesheet" href="{% static 'theme/assets/css/ui.css'%}">  
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script src="{% static 'theme/assets/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+  </head>
+
+  <body>
+  
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+  
+      <div class="sidebar-brand d-none d-md-flex ">
+  
+        <img src="assets/images/wd.png" alt="Logo" width="30" height="30">
+        <span class="fw-semibold fs-4">DON BOSCO</span>
+  
+      </div>    
+          
+      
+      <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+  
+        <li class="nav-item px-5">
+          <p class="fw-light fs-3">User Type</p>
+        </li>
+  
+        <li class="nav-title">Profile</li>
+  
+        <li class=" nav-item mx-5">
+          <a href="#" class="px-5 text-secondary text-decoration-none " id="sideBarProfile" >
+          
+            <div class="avatar avatar-xl">
+              <img class="avatar-img" src="assets/img/avatars/8.jpg"  alt="user@email.com">
+              <span class="ms-3"> @username </span>                     
+            </div>
+
+          </a>
+        </li>
+  
+        <li class="nav-title">Menu</li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-grid px-3"></i>Dashboard</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="colors.html"><i class="fa-solid fa-graduation-cap px-3"></i>Learn</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="typography.html"><i class="px-3 fa-solid fa-newspaper"></i>News</a>
+        </li>
+  
+        <li class="nav-group">
+          <a class="nav-link nav-group-toggle" href="#"><i class="px-3 fa-solid fa-bell"></i>Notifications</a>
+  
+          <ul class="nav-group-items">
+  
+            <li class="nav-item">
+              <a class="nav-link" href="notifications/alerts.html">
+                <i class="pe-3 fa-solid fa-message"></i>Messages
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="notifications/badge.html">
+                <i class="pe-3 fa-solid fa-newspaper"></i>News
+              </a>
+            </li>
+  
+          </ul>
+        </li>
+  
+      </ul>
+    </div>
+  
+    <div class="wrapper d-flex flex-column min-vh-100 text-white ">
+      <header class="header header-sticky mb-4 border-0">
+        <div class="container-fluid ">
+
+          <button class="header-toggler px-md-0 me-md-3" type="button"
+            onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+            <i class="bi bi-list fs-1 text-white"></i>
+          </button> 
+
+          <a class="header-brand d-md-none" href="#">
+            <img src="assets/images/bd.png" alt="logo" width="50" height="50">
+            <span>DON BOSCO</span>
+          </a> 
+  
+          <ul class="header-nav ms-3">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <div class="avatar avatar-md">
+                  <img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com">
+                </div>
+              </a>            
+  
+              <div class="dropdown-menu dropdown-menu-end pt-0">
+                <div class="dropdown-header bg-light py-2">
+                  <div class="fw-semibold">Account</div>
+                </div>  
+  
+                <a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-user"></i> Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-gear"></i> Settings
+                </a>
+  
+                <div class="dropdown-divider"></div>
+  
+                <a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-door-open"></i> Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="header-divider"></div>
+        <div class="container-fluid">
+          <p class="text-start fw-semibold fs-5">Dashboard</p>
+        </div>
+      </header>
+  
+      <div>
+        
+      </div>
+  
+      <footer class="d-flex py-3 my-3 px-3 text-white border-0">
+        <div>
+          <a href="https://coreui.io" class="text-secondary">CoreUI </a>
+          <a href="https://coreui.io" class="text-secondary">Bootstrap Admin Template</a>
+          © 2022 creativeLabs.
+        </div>
+
+        <div class="ms-auto">Powered by&nbsp;
+          <a href="https://coreui.io/docs/" class="text-secondary">CoreUI UI Components</a>
+        </div>
+
+      </footer>
+
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="{% static 'theme/vendors/@coreui/coreui/js/coreui.bundle.min.js'%}"></script>
+    <script src="{% static 'vendors/simplebar/js/simplebar.min.js'%}"></script>
+    <!-- Plugins and scripts required by this view-->
+    <script src="{% static 'theme/vendors/chart.js/js/chart.min.js'%}"></script>
+    <script src="{% static 'theme/vendors/@coreui/chartjs/js/coreui-chartjs.js'%}"></script>
+    <script src="{% static 'theme/vendors/@coreui/utils/js/coreui-utils.js'%}"></script>
+    <script src="{% static 'theme/js/main.js'%}"></script>
+    <script>
+    </script>
+  
+  </body>
+</html>

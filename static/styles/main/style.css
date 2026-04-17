@@ -1,0 +1,121 @@
+:root{
+    --primary: #1266f1 ;
+    --secondary: #b23cfd;
+    --success:#71DD37;
+    --danger:#FF3E1D;
+    --info: #03C3EC;
+    --warning: #FFAB00;
+    --dark: #233446;
+    --light: #E9E9FD;
+}
+a:hover{
+    text-decoration: underline;
+}
+.bg{
+    background-size: cover;
+    background-position: center;
+}
+.navbar-brand:hover{
+    text-decoration: none;
+}
+.nav-link{
+    color: #000;
+}
+.nav-link:hover{
+    color: var(--info);
+    transform: translateY(-1px);
+}
+.active-l{
+    color: var(--info);
+    font-weight: 500;
+}
+.active-l:hover{
+    transform: none;
+    text-decoration: none;
+}
+.carousel-item{
+    height: 70vh;
+}
+.carousel-item img{
+    height: 70vh;
+}
+.carousel-caption{
+    top: 40%;
+}
+.carousel-indicators .active{
+    background-color: #Fff;
+}
+/* slider indicator shape */
+/* .carousel-indicators li{
+    background-color: #Fff;
+    opacity: 1;
+    border-radius: 50%;
+    min-height: 15px;
+    max-width: 15px;
+} */
+.welcome{
+    width: 80%;
+    margin: 3rem auto;
+}
+.welcome hr{
+    width: 90%;
+    margin: 2rem auto;
+}
+.padding-y{
+    margin: 5rem 0;
+}
+.padding{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+.bg-text{
+    z-index: 5;
+}
+.line{
+    height: 1px;
+}
+/* some responsive behaviours */
+/* ------------big-small------- */
+@media (max-width:1400px){
+    .carousel-caption{
+        top: 30%;
+    }
+}
+@media (max-width:1200px){
+    .carousel-caption{
+        top: 25%;
+    }
+}
+@media (max-width:992px){
+    .carousel-caption{
+        top: 20%;
+    }
+}
+@media (max-width:767px){
+    
+}
+@media (max-width:576px){
+    
+}
+@media (max-width:250px){
+    .carousel-caption{
+        top: 10%;
+    }
+}
+/* --------------small to big------------  */
+@media (min-width:576px){
+
+}
+@media (min-width:768px){
+
+}
+@media (min-width:992px){
+
+}
+@media (min-width:1200px){
+
+}
+@media (min-width:1400px){
+
+}

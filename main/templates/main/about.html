@@ -1,0 +1,182 @@
+{% extends 'main/index.html'%}
+{% load static %}
+
+
+{% block slider %}
+<!-- hero section -->
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item bg-image bg d-flex align-items-center justify-content-center">
+            <img src="{% static 'images/images1.png'%}" alt="" class="w-100 bg">
+            <div class="mask" style="background-color: rgba(0,0,0,0.6);"></div>
+            <div class="carousel-caption text-white bg-text">
+                <h2 class="display-3 fw-normal ">About Us</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock slider %}
+
+
+{% block content %}
+
+
+<!-- about donbosco -->
+<section id="abtDB">
+    <div class="container welcome mt-5">
+        <div class="row padding-y">
+            <div class="col-md-12 text-center mb-5">
+                <h2 class="display-6 fw-normal">About DON BOSCO</h2>
+                <div class="line mx-auto bg-light w-75"></div>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur eveniet
+                    iusto ex amet quod, ut perferendis. Eius, fuga quas. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Mollitia vitae fugit dolore iste dolores rerum obcaecati ad soluta
+                    suscipit unde error cupiditate a, sed rem optio quibusdam, accusamus libero iusto?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- our principes -->
+<section id="principles">
+    <div class="container padding">
+        <div class="row">
+            <!-- title and principle img -->
+            <div class="col-12 text-center">
+                <h2 class="display-5 mb-3">Our Principles</h2>
+                <div class="line bg-light mx-auto w-50 mb-5"></div>
+                <!--underline-->
+                <img src="{% static 'images/principle.png'%}" height="150" width="150" alt=""
+                    class="d-block mx-auto mb-5">
+            </div>
+            <!-- religion -->
+            <div class="col-md-4 text-center mb-3">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2 class="text-center">Religion</h2>
+                        </div>
+                        <div class="card-text">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus, natus deleniti
+                                enim
+                                distinctio facilis, aliquam quos illum quaerat dolorum iste ratione alias, quae minima
+                                magnam
+                                rem mollitia eius? Repellat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- reason -->
+            <div class="col-md-4 text-center mb-3">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2 class="text-center">Reason</h2>
+                        </div>
+                        <div class="card-text">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus, natus deleniti
+                                enim
+                                distinctio facilis, aliquam quos illum quaerat dolorum iste ratione alias, quae minima
+                                magnam
+                                rem mollitia eius? Repellat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- loving-kindness -->
+            <div class="col-md-4 text-center mb-3">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2 class="text-center">Loving-Kindness</h2>
+                        </div>
+                        <div class="card-text">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus, natus deleniti
+                                enim
+                                distinctio facilis, aliquam quos illum quaerat dolorum iste ratione alias, quae minima
+                                magnam
+                                rem mollitia eius? Repellat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- mission -->
+<section id="mission">
+    <div class="container-fluid padding">
+        <div class="row welcome">
+            <div class="col-12">
+                <h2 class="text-center display-5">Our Mission</h2>
+                <div class="line bg-light mx-auto w-75 my-3"></div>
+            </div>
+            <div class="col-12 mt-3">
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sit aliquid
+                    eum molestias assumenda id rerum harum debitis! Officiis similique, adipisci, quidem dolorem
+                    vero itaque nesciunt soluta dignissimos eveniet possimus omnis doloribus? Officiis cupiditate
+                    facere cumque voluptatem a, sint dolore!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- our Community -->
+<section id="community">
+    <div class="row">
+        <!-- title -->
+        <div class="col-12">
+            <h2 class="display-5 text-center">Our Community</h2>
+            <div class="line bg-light w-75 mx-auto mt-3"></div>
+        </div>
+
+        <div class="padding-y">
+            <!-- slider -->
+            <div class="col-md-12">
+                <div class="carousel slide" id="comSlider" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- slide-1 -->
+                        <div class="carousel-item active bg-image bg"
+                            style="background-image:url('assets/images/photo4.jpg') ;">
+                            <img src="{% static 'images/photo4.jpg'%}" alt="" class="w-100">
+                        </div>
+                        <!-- slide-2 -->
+                        <div class="carousel-item bg-image bg">
+                            <img src="{% static 'images/photo3.jpg'%}" alt="" class="w-100">
+                        </div>
+                        <!-- slide-3 -->
+                        <div class="carousel-item bg-image bg">
+                            <img src="{% static 'images/photo2.jpg'%}" alt="" class="w-100">
+                        </div>
+                        <!-- slide-4 -->
+                        <div class="carousel-item bg-image bg">
+                            <img src="{% static 'images/photo1.jpg'%}" alt="" class="w-100">
+                        </div>
+                        <!-- slide-5 -->
+                        <div class="carousel-item bg-image bg">
+                        </div>
+                        <!-- slide-5 -->
+                        <div class="carousel-item bg-image bg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}
+
+</body>
+
+</html>

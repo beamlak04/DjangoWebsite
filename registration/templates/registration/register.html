@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="" href="">
+
+    <!-- mdb -->
+    <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css'%}">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css'%}">
+    
+    <!-- custom bootstrap -->
+    <link rel="stylesheet" href="{% static 'custom-bootstrap/css/main.min.css'%}">
+    
+    <!-- core css  -->
+    <link rel="stylesheet" href="{% static 'core-styles/landing_pg/style.css'%}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static 'styles/main/style.css'%}">
+    
+    <!-- font awesome   -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css'%}">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="{% static 'icons/bootstrap-icons/font/bootstrap-icons.css'%}">
+
+    <script src="{% static 'mdb/js/mdb.min.js'%}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+</head>
+
+<body>
+
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    
+    <div class="d-none d-md-block position-absolute top-0 start-0 ps-5" >
+        <a href="{% url 'Home'%}">
+            <!-- <img src="{% static 'font-awesome/svgs/solid/house.svg'%}" alt="" width="50" height="50"> -->
+            
+            <p><i class="fa-solid fa-house"></i> Back to Home</p>
+        </a>
+    </div>
+
+    <form action="" method="post" class="reg-form needs-validation border rounded bg-light" novalidate>
+        <!-- header -->
+        <div class="container">
+            <div class="container-fluid bg-secondary py-1 my-3 rounded">
+                <h2 class="display-6 fw-normal text-center text-white">Sign Up</h2>
+            </div>
+            <!-- form -->
+            <div class="row">
+                <!-- first column -->
+                <div class="col-md-4">
+                    <!-- first name -->
+                    <div class="mb-3">
+                        <label for="regUserName" class="form-label">First Name</label>
+                        <input required type="text" class="form-control mb-0" aria-describedby="regUserName" placeholder="First Name">
+                        <div class="invalid-feedback">
+                            Please enter your first name
+                        </div>
+                    </div>
+                    <!-- fathers name -->
+                    <div class="my-3">
+                        <label for="regUserFName" class="form-label">Father's Name</label>
+                        <input required type="text" class="form-control mb-0" aria-describedby="regUserFName"
+                            placeholder="Father's Name">
+                            <div class="invalid-feedback">
+                                Please enter your father's name
+                            </div>
+                    </div>
+                    <!-- grand father's name -->
+                    <div class="my-3">
+                        <label for="regUserGFName" class="form-label">Grand father's Name</label>
+                        <input required type="text" class="form-control mb-0" aria-describedby="regUserGFName"
+                            placeholder="Grand father's Name">
+                            <div class="invalid-feedback">
+                                Please enter your grand father's name
+                            </div>
+                    </div>
+                </div>
+                <!--end of firs column-->
+                <!-- second column -->
+                <div class="col-md-4">
+                    <!-- password -->
+                    <div class="my-3">
+                        <label for="regUserPass" class="form-label">Password</label>
+                        <input required type="password" class="form-control mb-0" aria-describedby="regUserPass"
+                            placeholder="Create password">
+                            <div class="invalid-feedback">
+                                Please enter your password 
+                            </div>
+                    </div>
+                    <!-- confirm password -->
+                    <div class="my-3">
+                        <label for="regUserCPass" class="form-label">Confirm Password</label>
+                        <input required type="password" class="form-control mb-0" aria-describedby="regUserCPass"
+                            placeholder="Confirm password">
+                            <div class="invalid-feedback">
+                                Please confirm your password
+                            </div>
+                    </div>
+                </div>
+                <!--end of second column-->
+                <!-- third column -->
+                <div class="col-md-4">
+                    <!-- sex -->
+                    <div class="mb-3">
+                        <label for="regUserSex" class="form-label">Sex</label>
+                        <select class="form-select" aria-label="User Sex">
+                            <option selected>Female</option>
+                            <option value="1">Male</option>
+
+                        </select>
+                    </div>
+                    <!-- birth date -->
+                    <div class="mb-3">
+                        <label class="form-label">Birth Date</label>
+                        <div class="input-group">
+                            <input required type="datetime" class="form-control" placeholder="dd/mm/yyyy">
+                            <div class="invalid-feedback">
+                                Please enter your birth date
+                            </div>
+                            <select class="form-select">
+                                <option selected>GC</option>
+                                <option value="1">EC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- type of user -->
+                    <div class="mb-3">
+                        <label for="regUserType" class="form-label">Type </label>
+                        <select class="form-select">
+                            <option selected>Student</option>
+                            <option value="1">Teacher</option>
+                            <option value="2">Staff</option>
+                        </select>
+                    </div>
+                    <!-- submit button -->
+                    <div class="my-3 text-center">
+                        <button class="btn btn-secondary w-100" type="submit">Sign Up</button>
+                        <p>Have an account? <a href="{% url 'login_pg' %}" class="text-secondary">Login</a></p>
+                    </div>
+                </div>
+                <!--end of third column-->
+            </div>
+            <!--end of row-->
+
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<script>
+    (() => {
+        'use strict'
+
+        const forms = document.querySelectorAll('.needs-validation')
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()){
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+</body>
+
+</html>
