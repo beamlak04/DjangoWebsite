@@ -1,14 +1,18 @@
 :root{
-    --primary: #1266f1 ;
-    --secondary: #b23cfd;
+    --primary: #e11e3a;
+    --secondary: #c91932;
     --success:#71DD37;
     --danger:#FF3E1D;
-    --info: #03C3EC;
+    --info: #e11e3a;
     --warning: #FFAB00;
     --dark: #233446;
-    --light: #E9E9FD;
+    --light: #fff7f9;
+}
+a{
+    color: var(--primary);
 }
 a:hover{
+    color: var(--secondary);
     text-decoration: underline;
 }
 .bg{
@@ -19,14 +23,14 @@ a:hover{
     text-decoration: none;
 }
 .nav-link{
-    color: #000;
+    color: var(--dark);
 }
 .nav-link:hover{
-    color: var(--info);
+    color: var(--primary);
     transform: translateY(-1px);
 }
 .active-l{
-    color: var(--info);
+    color: var(--primary);
     font-weight: 500;
 }
 .active-l:hover{
@@ -74,6 +78,39 @@ a:hover{
 }
 .line{
     height: 1px;
+}
+
+.theme-text-primary {
+    color: var(--primary) !important;
+}
+
+.theme-bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.theme-btn-outline {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.theme-btn-outline:hover,
+.theme-btn-outline:focus {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.theme-btn-solid {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.theme-btn-solid:hover,
+.theme-btn-solid:focus {
+    color: #fff;
+    background-color: #c91932;
+    border-color: #c91932;
 }
 /* some responsive behaviours */
 /* ------------big-small------- */

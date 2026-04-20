@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In | Don Bosco</title>
 
     <link rel="" href="">
 
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{% static 'core-styles/landing_pg/style.css'%}">
     <!-- Custom css -->
     <link rel="stylesheet" href="{% static 'styles/main/style.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/registration/style.css'%}">
     
     <!-- font awesome   -->
     <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css'%}">
@@ -30,39 +31,78 @@
     <script src="{% static 'mdb/js/mdb.min.js'%}"></script>
     <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
 </head>
-<body>
+<body class="auth-page">
 
-<div class="container d-flex align-items-center justify-content-center min-vh-100">
-    
-    <div class="d-none d-md-block position-absolute top-0 start-0 ps-5" >
-        <a href="{% url 'Home'%}">
-            <!-- <img src="{% static 'font-awesome/svgs/solid/house.svg'%}" alt="" width="50" height="50"> -->
-            
-            <p><i class="fa-solid fa-house"></i> Back to Home</p>
+<nav class="navbar navbar-expand-lg auth-navbar fixed-top">
+    <div class="container">
+        <a class="navbar-brand auth-brand" href="{% url 'Home'%}">
+            <img src="{% static 'images/bd.png'%}" alt="Don Bosco logo" height="44" width="88">
+            DON BOSCO
         </a>
+        <div class="d-flex align-items-center gap-2">
+            <a href="{% url 'Home'%}" class="btn auth-nav-outline">Home</a>
+            <a href="{% url 'register_pg' %}" class="btn auth-nav-solid">Sign Up</a>
+        </div>
     </div>
-    
-    <form action="" method="post" class="log-form border rounded bg-light pt-4">
-        <div class="container">
-            <div class="container-fluid bg-secondary py-1 rounded mb-3">
-                <h2 class="display-6 fw-normal text-center text-white">Sign in</h2>
-            </div>
-            <div class="mb-3">
-                <label for="userSignInEmail" class="form-label">Email</label>
-                <input type="email" placeholder="Email" class="form-control" aria-describedby="userSignInEmail">
-            </div>
-            <div class="mb-5">
-                <label for="userSignInPass" class="form-label">Password</label>
-                <input type="password" placeholder="Password" class="form-control" aria-describedby="userSignInPass">
-            </div>
-            <div class="mb-3 text-center">
-                <button class="btn btn-secondary rounded-pill w-100" type="submit">Login</button>
-                <p>Don't have an account? <a href="{% url 'register_pg'%}" class="text-secondary text-center">Sign up</a></p>
+</nav>
+
+<main class="auth-shell">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card auth-card">
+                    <div class="card-header">
+                        <h1 class="auth-title">Welcome Back</h1>
+                        <p>Sign in to continue to your account.</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="userSignInEmail" class="form-label">Email</label>
+                                <input id="userSignInEmail" name="email" required type="email" placeholder="name@example.com" class="form-control">
+                                <div class="invalid-feedback">Please provide a valid email address.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="userSignInPass" class="form-label">Password</label>
+                                <input id="userSignInPass" name="password" required type="password" placeholder="Your password" class="form-control">
+                                <div class="invalid-feedback">Please enter your password.</div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="rememberMe" name="remember_me">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="small">Forgot password?</a>
+                            </div>
+
+                            <button class="btn auth-btn w-100" type="submit">Sign In</button>
+                            <p class="text-center auth-switch">Don't have an account? <a href="{% url 'register_pg'%}">Create one</a></p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+</main>
 
-</div>
+<script>
+    (() => {
+        'use strict'
+
+        const forms = document.querySelectorAll('.needs-validation')
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
 
 </body>
 

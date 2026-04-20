@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up | Don Bosco</title>
 
     <link rel="" href="">
 
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{% static 'core-styles/landing_pg/style.css'%}">
     <!-- Custom css -->
     <link rel="stylesheet" href="{% static 'styles/main/style.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/registration/style.css'%}">
     
     <!-- font awesome   -->
     <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css'%}">
@@ -31,127 +32,98 @@
     <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
 </head>
 
-<body>
+<body class="auth-page">
 
-<div class="container d-flex align-items-center justify-content-center min-vh-100">
-    
-    <div class="d-none d-md-block position-absolute top-0 start-0 ps-5" >
-        <a href="{% url 'Home'%}">
-            <!-- <img src="{% static 'font-awesome/svgs/solid/house.svg'%}" alt="" width="50" height="50"> -->
-            
-            <p><i class="fa-solid fa-house"></i> Back to Home</p>
+<nav class="navbar navbar-expand-lg auth-navbar fixed-top">
+    <div class="container">
+        <a class="navbar-brand auth-brand" href="{% url 'Home'%}">
+            <img src="{% static 'images/bd.png'%}" alt="Don Bosco logo" height="44" width="88">
+            DON BOSCO
         </a>
-    </div>
-
-    <form action="" method="post" class="reg-form needs-validation border rounded bg-light" novalidate>
-        <!-- header -->
-        <div class="container">
-            <div class="container-fluid bg-secondary py-1 my-3 rounded">
-                <h2 class="display-6 fw-normal text-center text-white">Sign Up</h2>
-            </div>
-            <!-- form -->
-            <div class="row">
-                <!-- first column -->
-                <div class="col-md-4">
-                    <!-- first name -->
-                    <div class="mb-3">
-                        <label for="regUserName" class="form-label">First Name</label>
-                        <input required type="text" class="form-control mb-0" aria-describedby="regUserName" placeholder="First Name">
-                        <div class="invalid-feedback">
-                            Please enter your first name
-                        </div>
-                    </div>
-                    <!-- fathers name -->
-                    <div class="my-3">
-                        <label for="regUserFName" class="form-label">Father's Name</label>
-                        <input required type="text" class="form-control mb-0" aria-describedby="regUserFName"
-                            placeholder="Father's Name">
-                            <div class="invalid-feedback">
-                                Please enter your father's name
-                            </div>
-                    </div>
-                    <!-- grand father's name -->
-                    <div class="my-3">
-                        <label for="regUserGFName" class="form-label">Grand father's Name</label>
-                        <input required type="text" class="form-control mb-0" aria-describedby="regUserGFName"
-                            placeholder="Grand father's Name">
-                            <div class="invalid-feedback">
-                                Please enter your grand father's name
-                            </div>
-                    </div>
-                </div>
-                <!--end of firs column-->
-                <!-- second column -->
-                <div class="col-md-4">
-                    <!-- password -->
-                    <div class="my-3">
-                        <label for="regUserPass" class="form-label">Password</label>
-                        <input required type="password" class="form-control mb-0" aria-describedby="regUserPass"
-                            placeholder="Create password">
-                            <div class="invalid-feedback">
-                                Please enter your password 
-                            </div>
-                    </div>
-                    <!-- confirm password -->
-                    <div class="my-3">
-                        <label for="regUserCPass" class="form-label">Confirm Password</label>
-                        <input required type="password" class="form-control mb-0" aria-describedby="regUserCPass"
-                            placeholder="Confirm password">
-                            <div class="invalid-feedback">
-                                Please confirm your password
-                            </div>
-                    </div>
-                </div>
-                <!--end of second column-->
-                <!-- third column -->
-                <div class="col-md-4">
-                    <!-- sex -->
-                    <div class="mb-3">
-                        <label for="regUserSex" class="form-label">Sex</label>
-                        <select class="form-select" aria-label="User Sex">
-                            <option selected>Female</option>
-                            <option value="1">Male</option>
-
-                        </select>
-                    </div>
-                    <!-- birth date -->
-                    <div class="mb-3">
-                        <label class="form-label">Birth Date</label>
-                        <div class="input-group">
-                            <input required type="datetime" class="form-control" placeholder="dd/mm/yyyy">
-                            <div class="invalid-feedback">
-                                Please enter your birth date
-                            </div>
-                            <select class="form-select">
-                                <option selected>GC</option>
-                                <option value="1">EC</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- type of user -->
-                    <div class="mb-3">
-                        <label for="regUserType" class="form-label">Type </label>
-                        <select class="form-select">
-                            <option selected>Student</option>
-                            <option value="1">Teacher</option>
-                            <option value="2">Staff</option>
-                        </select>
-                    </div>
-                    <!-- submit button -->
-                    <div class="my-3 text-center">
-                        <button class="btn btn-secondary w-100" type="submit">Sign Up</button>
-                        <p>Have an account? <a href="{% url 'login_pg' %}" class="text-secondary">Login</a></p>
-                    </div>
-                </div>
-                <!--end of third column-->
-            </div>
-            <!--end of row-->
-
+        <div class="d-flex align-items-center gap-2">
+            <a href="{% url 'Home'%}" class="btn auth-nav-outline">Home</a>
+            <a href="{% url 'login_pg' %}" class="btn auth-nav-solid">Sign In</a>
         </div>
+    </div>
+</nav>
 
-    </form>
+<main class="auth-shell">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <div class="card auth-card">
+                    <div class="card-header">
+                        <h1 class="auth-title">Create Account</h1>
+                        <p>Join Don Bosco school community portal.</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="regUserName" class="form-label">First Name</label>
+                                    <input id="regUserName" name="first_name" required type="text" class="form-control" placeholder="First Name">
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regUserFName" class="form-label">Father's Name</label>
+                                    <input id="regUserFName" name="father_name" required type="text" class="form-control" placeholder="Father's Name">
+                                    <div class="invalid-feedback">Please enter your father's name.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regUserGFName" class="form-label">Grandfather's Name</label>
+                                    <input id="regUserGFName" name="grandfather_name" required type="text" class="form-control" placeholder="Grandfather's Name">
+                                    <div class="invalid-feedback">Please enter your grandfather's name.</div>
+                                </div>
 
-</div>
+                                <div class="col-md-6">
+                                    <label for="regUserPass" class="form-label">Password</label>
+                                    <input id="regUserPass" name="password" required type="password" class="form-control" placeholder="Create password">
+                                    <div class="invalid-feedback">Please enter your password.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="regUserCPass" class="form-label">Confirm Password</label>
+                                    <input id="regUserCPass" name="confirm_password" required type="password" class="form-control" placeholder="Confirm password">
+                                    <div class="invalid-feedback">Please confirm your password.</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="regUserSex" class="form-label">Sex</label>
+                                    <select id="regUserSex" name="sex" class="form-select" required>
+                                        <option value="" selected disabled>Select sex</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a sex.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="birthDate" class="form-label">Birth Date</label>
+                                    <input id="birthDate" name="birth_date" required type="date" class="form-control">
+                                    <div class="invalid-feedback">Please enter your birth date.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regUserType" class="form-label">Type</label>
+                                    <select id="regUserType" name="user_type" class="form-select" required>
+                                        <option value="" selected disabled>Select user type</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Staff">Staff</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select user type.</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button class="btn auth-btn w-100" type="submit">Create Account</button>
+                                <p class="text-center auth-switch">Have an account? <a href="{% url 'login_pg' %}">Sign in</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
 
 
